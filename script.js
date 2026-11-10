@@ -4,7 +4,6 @@ let picture = document.querySelector('#avatar');
 let errorMessage = document.querySelector('#errorMessage');
 errorMessage.textContent = "";
 let repository = document.querySelector('.repository');
-repository.innerHTML = "";
 errorMessage.textContent = "";
 
 search.addEventListener('click',()=>{
@@ -19,6 +18,7 @@ search.addEventListener('click',()=>{
         
     })
     .then((data)=>{
+        repository.innerHTML = "";
         console.log(data)
         picture.src = data.avatar_url;
         let name = document.querySelector('#naam')
